@@ -1,0 +1,35 @@
+{
+  "menu": {
+    "index": "Home",
+    "products": "Products",
+    "contact": "Contacts"
+  },
+  "social_links": [
+    "facebook-f",
+    "instagram",
+    "google-plus-g",
+    "linkedin-in"
+  ],
+
+  "features": {
+    "Credit Card Support": "img/icon/feature_icon_1.svg",
+    "Online Order": "img/icon/feature_icon_2.svg",
+    "Free Delivery": "img/icon/feature_icon_3.svg",
+    "Product with Gift": "img/icon/feature_icon_4.svg"
+  },
+
+  "reviews": {
+    "John Stone": {
+      "image":"img/client.png",
+      "text": "Working in conjunction with humanitarian aid agencies, we have supported programmes to help\nalleviate human suffering."
+    },
+    "Tom Holland": {
+      "image":"img/client_1.png",
+      "text": "Working in conjunction with humanitarian aid agencies, we have supported programmes to help\nalleviate human suffering."
+    },
+    "Sam Pierce": {
+      "image":"img/client_2.png",
+      "text": "Working in conjunction with humanitarian aid agencies, we have supported programmes to help\nalleviate human suffering."
+    }
+  }
+}

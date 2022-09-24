@@ -1,0 +1,42 @@
+[
+  {
+    "genre": "Thriller",
+    "name": "Shock Treatment",
+    "description": "The last thing Miriam expects is for her fiancee Daniel to call her moments before his own death.",
+    "image": "books_images/thriller.jpg",
+    "price": 1000,
+    "authors": ["Geoffrey Lyon"]
+  },
+  {
+    "genre": "Fantasy",
+    "name": "Fantasy book",
+    "description": "Interesting fantasy book",
+    "image": "books_images/fantasy.jpg",
+    "price": 61000,
+    "authors": ["Christopher Paolini", "Joanne Rowling"]
+  },
+  {
+    "genre": "Fantasy",
+    "name": "Cool fantasy book",
+    "description": "Really interesting fantasy book",
+    "image": "books_images/fantasy2.jpg",
+    "price": 41030,
+    "authors": ["Christopher Paolini"]
+  },
+  {
+    "genre": "Romance",
+    "name": "Wings of Love: A sweet small town contemporary romance",
+    "description": "GOLDEN HEART WINNER, debut author",
+    "image": "books_images/romance.jpg",
+    "price": 31000,
+    "authors": ["Pamela Ferguson"]
+  },
+ {
+    "genre": "Romance",
+    "name": "True Hearts: A Sweet Small Town Romance",
+    "description": "Take a trip to Lilac in this heartwarming small town romance by award-winning author Pamela Ferguson",
+    "image": "books_images/romance2.jpg",
+    "price": 10800,
+    "authors": ["Pamela Ferguson"]
+  }
+]
