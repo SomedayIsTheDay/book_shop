@@ -1,6 +1,5 @@
 from django.contrib.auth.forms import (
     UserCreationForm,
-    UserChangeForm,
     AuthenticationForm,
 )
 from .models import BookUser
@@ -30,7 +29,7 @@ class BookUserRegistrationForm(UserCreationForm):
         return username
 
 
-class BookUserEditForm(UserChangeForm):
+class BookUserEditForm(forms.ModelForm):
     class Meta:
         model = BookUser
         fields = (

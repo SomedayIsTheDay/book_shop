@@ -10,6 +10,7 @@ urlpatterns = [
     path("contacts/", mainapp.contacts, name="contacts"),
     path("books/", include("mainapp.urls", namespace="books")),
     path("auth/", include("authapp.urls", namespace="auth")),
+    path("social/", include("social_django.urls", namespace="social")),
 ]
 
 if settings.DEBUG:
