@@ -1,6 +1,8 @@
 from django.core.management.base import BaseCommand
 from mainapp.models import Genre, Book, Author
+from authapp.models import BookUser
 from django.conf import settings
+from decouple import config
 import json
 import os
 
@@ -41,3 +43,11 @@ class Command(BaseCommand):
             del book["authors"]
             book = Book.objects.create(**book)
             book.authors.set(authors)
+
+        if not BookUser.objects.filter(username="admin"):
+            BookUser.objects.create_superuser(
+                username="admin",
+                email="admin@localhost",
+                password=config("ADMIN_PASSWORD"),
+                age=100,
+            )

@@ -3,7 +3,7 @@ from .models import Book, Author, Genre
 from django.conf import settings
 import json
 
-with open((settings.JSON_ROOT / "data.json"), "r", encoding="utf-8") as f:
+with open((settings.JSON_ROOT / "misc_data.json"), "r", encoding="utf-8") as f:
     data_json = json.load(f)
 
 

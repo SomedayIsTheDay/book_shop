@@ -7,8 +7,9 @@ import mainapp.views as mainapp
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", mainapp.index, name="index"),
-    path("books/", include("mainapp.urls", namespace="books")),
     path("contacts/", mainapp.contacts, name="contacts"),
+    path("books/", include("mainapp.urls", namespace="books")),
+    path("auth/", include("authapp.urls", namespace="auth")),
 ]
 
 if settings.DEBUG:
