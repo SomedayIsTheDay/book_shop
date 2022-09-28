@@ -1,0 +1,56 @@
+{% load static %}
+<table class="table cart_list">
+    <thead>
+    <tr>
+        <th scope="col">Product</th>
+        <th scope="col">Price</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in cart.all %}
+        <tr>
+            <td>
+                <a href="{% url 'mainapp:book' item.book.pk %}">
+                    <div class="media">
+                        <div class="d-flex">
+                            <img src="{{ item.book.image.url }}" alt=""/>
+                        </div>
+                        <div class="media-body">
+                            <p>{{ item.book }}</p>
+                        </div>
+                    </div>
+                </a>
+            </td>
+            <td>
+                <h5>${{ item.book.price }}</h5>
+            </td>
+            <td>
+                <input onKeyDown="return false" class="form-control cart-input" type="number" name="{{ item.pk }}"
+                       min="0" value="{{ item.quantity }}" style="border: 0 none; width: 4em; cursor: default">
+            </td>
+            <td>
+                <h5>${{ item.cost }}</h5>
+            </td>
+            <td>
+                <a href="{% url 'cart:remove' item.pk %}" class="btn btn-danger">
+                    Remove
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <h5>Subtotal</h5>
+        </td>
+        <td>
+            <h5>${{ cart.total_price }}</h5>
+        </td>
+    </tr>
+    </tbody>
+</table>

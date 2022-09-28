@@ -1,0 +1,22 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+    <section class="breadcrumb_part">
+        <div class="breadcrumb_iner">
+            <h2>Cart</h2>
+        </div>
+    </section>
+
+    <section class="cart_area section_padding">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    {% include 'cartapp/includes/cart_list.html' %}
+                    <div class="checkout_btn_inner float-right">
+                        <a class="btn_1" href="{% url 'mainapp:index' %}">Continue Shopping</a>
+                        <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -25,7 +25,7 @@ class Book(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     is_active = models.BooleanField(default=True)
-    authors = models.ManyToManyField(Author)
+    authors = models.ManyToManyField(Author, related_name="authors")
 
     def __str__(self):
         return self.name

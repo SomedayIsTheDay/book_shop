@@ -14,18 +14,13 @@
                 <div class="col-lg-8">
                     <div class="single_product_text text-center">
                         <h3>{{ book.name }}</h3>
+                        <h4>by {% for author in authors %}
+                            {{ author }}{% if author != authors.last %},{% else %}.{% endif %}{% endfor %}</h4>
                         <p>{{ book.description }}</p>
                         <div class="card_area">
-                            <div class="product_count_area">
-                                <label for="quantity">Quantity</label>
-                                <div class="product_count d-inline-block">
-                                    <input class="product_count_item input-number" id="quantity" type="text" value="1" min="0"
-                                           max="10">
-                                </div>
-                                <p> {{ book.price }}$</p>
-                            </div>
+                            <p> {{ book.price }}$</p>
                             <div class="add_to_cart">
-                                <a href="#" class="btn_3">add to cart</a>
+                                <a href="{% url 'cart:add' book.pk %}" class="btn_3">add to cart</a>
                             </div>
                         </div>
                     </div>

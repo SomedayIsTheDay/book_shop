@@ -34,10 +34,12 @@ def books(request):
 
 
 def book(request, pk):
+    book_obj = get_object_or_404(Book, pk=pk)
+    authors = book_obj.authors.all()
     return render(
         request,
         "mainapp/book.html",
-        {"book": get_object_or_404(Book, pk=pk), "title": "Book"},
+        {"book": book_obj, "title": "Book", "authors": authors},
     )
 
 
