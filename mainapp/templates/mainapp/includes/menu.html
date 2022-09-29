@@ -18,6 +18,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'contacts' %}">Contact</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'orders:orders' %}">Orders</a>
+                            </li>
                             {% if user.is_authenticated %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'auth:logout' %}">Sign out</a>

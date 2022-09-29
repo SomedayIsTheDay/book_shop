@@ -1,0 +1,61 @@
+{% extends 'mainapp/base.html' %}
+{% block content %}
+    <section class="breadcrumb_part">
+        <div class="breadcrumb_iner">
+            <h2>Orders</h2>
+        </div>
+    </section>
+
+    <section class="cart_area section_padding">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    {% load static %}
+                    <table class="table cart_list">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Total cost</th>
+                            <th scope="col">Total quantity</th>
+                            <th scope="col">Created</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in object_list %}
+                            <tr>
+                                <td>
+                                    <h5>{{ item.pk }}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ item.get_status_display }}</h5>
+                                </td>
+                                <td>
+                                    ${{ item.summary.total_cost }}
+                                </td>
+                                <td>
+                                    {{ item.summary.total_quantity }}
+                                </td>
+                                <td>
+                                    {{ item.created_at }}
+                                </td>
+                                <td>
+                                    <a href="{% url 'orders:detail' item.pk %}" class="btn btn-info">Details</a>
+                                </td>
+                                <td>
+                                    <a href="{% url 'orders:cancel' item.pk %}"
+                                       class="btn btn-danger {% if item.status != "FRM" %} disabled {% endif %}">
+                                        Cancel
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

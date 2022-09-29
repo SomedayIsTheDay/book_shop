@@ -12,6 +12,9 @@ class CartManager(models.Manager):
 
 
 class Cart(models.Model):
+    class Meta:
+        ordering = ["-book"]
+
     user = models.ForeignKey(BookUser, on_delete=models.CASCADE, related_name="cart")
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=0)

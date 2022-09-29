@@ -18,6 +18,10 @@ class BookUserRegistrationForm(UserCreationForm):
             "email",
             "age",
             "avatar",
+            "country",
+            "city",
+            "street",
+            "postcode",
         )
 
     def clean_username(self):
@@ -38,6 +42,10 @@ class BookUserEditForm(forms.ModelForm):
             "email",
             "age",
             "avatar",
+            "country",
+            "city",
+            "street",
+            "postcode",
         )
 
     def clean_username(self):

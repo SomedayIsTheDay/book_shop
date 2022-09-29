@@ -18,7 +18,7 @@
                             {{ author }}{% if author != authors.last %},{% else %}.{% endif %}{% endfor %}</h4>
                         <p>{{ book.description }}</p>
                         <div class="card_area">
-                            <p> {{ book.price }}$</p>
+                            <p>${{ book.price }}</p>
                             <div class="add_to_cart">
                                 <a href="{% url 'cart:add' book.pk %}" class="btn_3">add to cart</a>
                             </div>

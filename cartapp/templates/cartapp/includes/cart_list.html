@@ -10,7 +10,7 @@
     </tr>
     </thead>
     <tbody>
-    {% for item in cart.all %}
+    {% for item in cart %}
         <tr>
             <td>
                 <a href="{% url 'mainapp:book' item.book.pk %}">
@@ -49,7 +49,7 @@
             <h5>Subtotal</h5>
         </td>
         <td>
-            <h5>${{ cart.total_price }}</h5>
+            <h5>${{ request.user.cart.total_price }}</h5>
         </td>
     </tr>
     </tbody>

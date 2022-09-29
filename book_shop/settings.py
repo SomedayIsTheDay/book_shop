@@ -72,6 +72,7 @@ INSTALLED_APPS = [
     "mainapp",
     "authapp",
     "cartapp",
+    "ordersapp",
 ]
 
 

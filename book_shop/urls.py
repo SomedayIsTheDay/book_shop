@@ -11,6 +11,7 @@ urlpatterns = [
     path("books/", include("mainapp.urls", namespace="books")),
     path("auth/", include("authapp.urls", namespace="auth")),
     path("cart/", include("cartapp.urls", namespace="cart")),
+    path("orders/", include("ordersapp.urls", namespace="orders")),
     path("social/", include("social_django.urls", namespace="social")),
     path("__debug__/", include("debug_toolbar.urls")),
 ]

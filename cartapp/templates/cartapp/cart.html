@@ -13,7 +13,7 @@
                     {% include 'cartapp/includes/cart_list.html' %}
                     <div class="checkout_btn_inner float-right">
                         <a class="btn_1" href="{% url 'mainapp:index' %}">Continue Shopping</a>
-                        <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+                        <a class="btn_1 checkout_btn_1" href="{% url 'orders:create' %}">Checkout</a>
                     </div>
                 </div>
             </div>

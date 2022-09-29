@@ -25,8 +25,8 @@
       <list>
         <option value="$MODULE_DIR$/mainapp/templates" />
         <option value="$MODULE_DIR$/authapp/templates" />
-        <option value="$MODULE_DIR$/basketapp/templates" />
         <option value="$MODULE_DIR$/cartapp/templates" />
+        <option value="$MODULE_DIR$/ordersapp/templates" />
       </list>
     </option>
   </component>
