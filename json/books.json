@@ -5,38 +5,89 @@
     "description": "The last thing Miriam expects is for her fiancee Daniel to call her moments before his own death.",
     "image": "books_images/thriller.jpg",
     "price": 1000,
-    "authors": ["Geoffrey Lyon"]
+    "authors": [
+      "Geoffrey Lyon"
+    ]
   },
   {
     "genre": "Fantasy",
-    "name": "Fantasy book",
-    "description": "Interesting fantasy book",
+    "name": "The Genesis of Misery",
+    "description": "An immersive, electrifying space-fantasy, Neon Yang's debut novel The Genesis of Misery is full of high-tech space battles and political machinations, starring a queer and diverse array of pilots, princesses, and prophetic heirs.",
     "image": "books_images/fantasy.jpg",
-    "price": 61000,
-    "authors": ["Christopher Paolini", "Joanne Rowling"]
+    "price": 6100,
+    "authors": [
+      "Neon Yang"
+    ]
   },
   {
     "genre": "Fantasy",
-    "name": "Cool fantasy book",
-    "description": "Really interesting fantasy book",
+    "name": "Eragon: Inheritance, Book 1",
+    "description": "Fifteen-year-old Eragon believes he is merely a poor farm boy - until his destiny as a Dragon Rider is revealed.",
     "image": "books_images/fantasy2.jpg",
-    "price": 41030,
-    "authors": ["Christopher Paolini"]
+    "price": 8990,
+    "authors": [
+      "Christopher Paolini"
+    ]
+  },
+  {
+    "genre": "Fantasy",
+    "name": "Eldest: The Inheritance Cycle, Book 2",
+    "description": "Eragon and his dragon, Saphira, have just saved the rebel state from destruction by the mighty forces of King Galbatorix, cruel ruler of the Empire.",
+    "image": "books_images/fantasy3.jpg",
+    "price": 7830,
+    "authors": [
+      "Christopher Paolini"
+    ]
+  },
+  {
+    "genre": "Fantasy",
+    "name": "Brisingr: The Inheritance Cycle, Book 3",
+    "description": "Eragon is the greatest hope to rid the land of tyranny. Can this once simple farm boy unite the rebel forces and defeat the king?",
+    "image": "books_images/fantasy4.jpg",
+    "price": 9999,
+    "authors": [
+      "Christopher Paolini"
+    ]
+  },
+  {
+    "genre": "Fantasy",
+    "name": "Samhain Sorceries",
+    "description": "Now, at Samhain, ritual fires of ash and apple-wood, mixed with bull’s bones, burned on the heights and the shore to deter malign spirits, or demons out of Hell as the Christians said.",
+    "image": "books_images/fantasy6.jpg",
+    "price": 7587,
+    "authors": [
+      "Keith Taylor",
+      "Adrian Cole"
+    ]
+  },
+  {
+    "genre": "Fantasy",
+    "name": "Inheritance: The Inheritance Cycle, Book 4",
+    "description": "Not so very long ago, Eragon - Shadeslayer, Dragon Rider - was nothing more than a poor farm boy, and his dragon, Saphira, only a blue stone in the forest. Now the fate of an entire civilization rests on their shoulders.",
+    "image": "books_images/fantasy5.jpg",
+    "price": 4260,
+    "authors": [
+      "Christopher Paolini"
+    ]
   },
   {
     "genre": "Romance",
     "name": "Wings of Love: A sweet small town contemporary romance",
     "description": "GOLDEN HEART WINNER, debut author",
     "image": "books_images/romance.jpg",
-    "price": 31000,
-    "authors": ["Pamela Ferguson"]
+    "price": 3100,
+    "authors": [
+      "Pamela Ferguson"
+    ]
   },
- {
+  {
     "genre": "Romance",
     "name": "True Hearts: A Sweet Small Town Romance",
     "description": "Take a trip to Lilac in this heartwarming small town romance by award-winning author Pamela Ferguson",
     "image": "books_images/romance2.jpg",
-    "price": 10800,
-    "authors": ["Pamela Ferguson"]
+    "price": 1080,
+    "authors": [
+      "Pamela Ferguson"
+    ]
   }
 ]

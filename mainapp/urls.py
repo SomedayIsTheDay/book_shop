@@ -5,5 +5,6 @@ app_name = "mainapp"
 
 urlpatterns = [
     path("", mainapp.books, name="index"),
-    path("<int:pk>/", mainapp.book, name="book"),
+    path("<int:page>/", mainapp.books, name="books"),
+    path("book/<int:pk>/", mainapp.book, name="book"),
 ]

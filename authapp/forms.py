@@ -21,6 +21,7 @@ class BookUserRegistrationForm(UserCreationForm):
             "country",
             "city",
             "street",
+            "street_number",
             "postcode",
         )
 
@@ -45,6 +46,7 @@ class BookUserEditForm(forms.ModelForm):
             "country",
             "city",
             "street",
+            "street_number",
             "postcode",
         )
 

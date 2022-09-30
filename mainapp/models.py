@@ -27,5 +27,8 @@ class Book(models.Model):
     is_active = models.BooleanField(default=True)
     authors = models.ManyToManyField(Author, related_name="authors")
 
+    class Meta:
+        ordering = ["-name"]
+
     def __str__(self):
         return self.name

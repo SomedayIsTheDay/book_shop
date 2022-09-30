@@ -50,4 +50,9 @@ class Command(BaseCommand):
                 email="admin@localhost",
                 password=config("ADMIN_PASSWORD"),
                 age=100,
+                country="USA",
+                city="Los Angeles",
+                street="Gagarin street",
+                street_number="56",
+                postcode="39685",
             )

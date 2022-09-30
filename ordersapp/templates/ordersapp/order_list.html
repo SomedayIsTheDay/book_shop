@@ -32,12 +32,14 @@
                                 <td>
                                     <h5>{{ item.get_status_display }}</h5>
                                 </td>
-                                <td>
-                                    ${{ item.summary.total_cost }}
-                                </td>
-                                <td>
-                                    {{ item.summary.total_quantity }}
-                                </td>
+                                {% with summary=item.summary %}
+                                    <td>
+                                        ${{ summary.total_cost }}
+                                    </td>
+                                    <td>
+                                        {{ summary.total_quantity }}
+                                    </td>
+                                {% endwith %}
                                 <td>
                                     {{ item.created_at }}
                                 </td>

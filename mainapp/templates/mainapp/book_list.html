@@ -2,7 +2,7 @@
 {% block content %}
     <section class="breadcrumb_part">
         <div class="breadcrumb_iner">
-            <h2>product list</h2>
+            <h2>{{ title }}</h2>
         </div>
     </section>
 
@@ -11,28 +11,20 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="product_sidebar">
-                        <div class="single_sedebar">
-                            <form action="#">
-                                <input type="text" name="#" placeholder="Search keyword">
-                                <i class="ti-search"></i>
-                            </form>
-                        </div>
+                        {#                        <div class="single_sedebar">#}
+                        {#                            <form action="#">#}
+                        {#                                <input type="text" name="#" placeholder="Search keyword">#}
+                        {#                                <i class="ti-search"></i>#}
+                        {#                            </form>#}
+                        {#                        </div>#}
                         <div class="single_sedebar">
                             <div class="select_option">
                                 <div class="select_option_list">Genre<i class="right fas fa-caret-down"></i></div>
                                 <div class="select_option_dropdown">
                                     {% for genre in genres %}
-                                        <p><a href="#">{{ genre.name }}</a></p>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_sedebar">
-                            <div class="select_option">
-                                <div class="select_option_list">Author<i class="right fas fa-caret-down"></i></div>
-                                <div class="select_option_dropdown">
-                                    {% for author in authors %}
-                                        <p><a href="#">{{ author.first_name }} {{ author.last_name }}</a></p>
+                                        <p>
+                                            <a href="?genre={{ genre.pk }}">{{ genre.name }}</a>
+                                        </p>
                                     {% endfor %}
                                 </div>
                             </div>
@@ -48,16 +40,48 @@
                                         <a href="{% url 'mainapp:book' book.pk %}">
                                             <img src="{{ book.image.url }}" alt="book" class="img-fluid">
                                             <h3>{{ book.name }}</h3>
-                                            <h3>{{ book.description }}</h3>
-                                            <p>{{ book.price }}$</p>
+                                            <h3>{{ book.description|truncatechars:50 }}</h3>
+                                            <p>${{ book.price }}</p>
                                         </a>
                                     </div>
                                 </div>
                             {% endfor %}
                         </div>
-                        <div class="load_more_btn text-center">
-                            <a href="#" class="btn_3">Load More</a>
-                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center pagination-lg">
+                                {% with param=request.GET.urlencode %}
+                                    {% if books.has_previous %}
+                                        <li class="page-item">
+                                            <a class="page-link"
+                                               href="{% url 'books:books' books.previous_page_number %}?{{ param }}"
+                                               aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+
+                                        <li class="page-item"><a class="page-link"
+                                                                 href="{% url 'books:books' books.previous_page_number %}?{{ param }}">{{ books.previous_page_number }}</a>
+                                        </li>
+                                    {% endif %}
+                                    <li class="page-item"><a class="page-link"
+                                                             href="{% url 'books:books' books.number %}?{{ param }}">{{ books.number }}</a>
+                                    </li>
+                                    {% if books.has_next %}
+                                        <li class="page-item"><a class="page-link"
+                                                                 href="{% url 'books:books' books.next_page_number %}?{{ param }}">{{ books.next_page_number }}</a>
+                                        </li>
+
+                                        <li class="page-item">
+                                            <a class="page-link"
+                                               href="{% url 'books:books' books.next_page_number %}?{{ param }}"
+                                               aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                {% endwith %}
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
