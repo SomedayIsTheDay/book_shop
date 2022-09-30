@@ -1,5 +1,6 @@
 {% extends 'mainapp/base.html' %}
 {% load widget_tweaks %}
+{% load static %}
 {% block content %}
     <section class="breadcrumb_part">
         <div class="breadcrumb_iner">
@@ -14,7 +15,7 @@
                     <div class="login_part_text text-center" style="width: 100%">
                         <div class="login_part_text_iner">
                             {% if user.avatar %}
-                                <img src="{{ user.avatar.url }}" alt="avatar">
+                                <img src="{% static 'default.png' %}" alt="avatar">
                             {% endif %}
                         </div>
                     </div>
