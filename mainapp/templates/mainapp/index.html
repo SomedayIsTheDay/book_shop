@@ -32,7 +32,7 @@
                             <div class="row align-items-center justify-content-between">
                                 <div class="col-lg-6 col-sm-6">
                                     <div class="single_product_img">
-                                        <img src="/staticfiles/books_images/{{ book.image }}" class="img-fluid" alt="#">
+                                        <img src="/staticfiles/{{ book.image }}" class="img-fluid" alt="#">
                                         <img src="{% static 'img/product_overlay.png' %}" alt="#"
                                              class="product_overlay img-fluid">
                                     </div>
@@ -42,7 +42,7 @@
                                         <h5>Only for {{ book.price }}$</h5>
                                         <a href="{% url 'mainapp:book' book.pk %}">
                                             <h3>{{ book.name }}</h3>
-                                            <h2>{{ book.description }}</h2>
+                                            <h2>{{ book.description|truncatechars:40 }}</h2>
                                         </a>
                                         <a href="{% url 'mainapp:index' %}" class="btn_3">Explore Now</a>
                                     </div>
