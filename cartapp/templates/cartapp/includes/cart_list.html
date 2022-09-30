@@ -16,7 +16,7 @@
                 <a href="{% url 'mainapp:book' item.book.pk %}">
                     <div class="media">
                         <div class="d-flex">
-                            <img src="{{ item.book.image.url }}" alt=""/>
+                            <img src="/staticfiles/books_images/{{ item.book.image }}" alt=""/>
                         </div>
                         <div class="media-body">
                             <p>{{ item.book }}</p>
