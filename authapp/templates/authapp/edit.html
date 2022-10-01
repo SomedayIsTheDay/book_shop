@@ -7,8 +7,16 @@
             <h2>Edit</h2>
         </div>
     </section>
-
-    <section class="login_part section_padding ">
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="alert alert-{{ message.tags }}"
+                    style="height: 100px; text-align: center;"><h1
+                        style="color: #67776a">{{ message }}</h1></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <section class="login_part section_padding">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-6">

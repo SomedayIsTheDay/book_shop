@@ -1,4 +1,5 @@
-from django.contrib import auth
+from django.contrib import auth, messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
@@ -20,7 +21,7 @@ class BookUserLoginView(LoginView):
     extra_context = {"title": "Login"}
 
 
-class BookUserEditView(UpdateView):
+class BookUserEditView(LoginRequiredMixin, UpdateView):
     template_name = "authapp/edit.html"
     model = BookUser
     form_class = BookUserEditForm
@@ -28,6 +29,15 @@ class BookUserEditView(UpdateView):
     def get_success_url(self):
         user_pk = self.kwargs["pk"]
         return reverse_lazy("auth:edit", args=[user_pk])
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        if self.request.GET.get("next") and "/cart/" in self.request.GET.get("next"):
+            data["message"] = messages.info(
+                self.request,
+                "You need to fill the geolocation fields before making an order",
+            )
+        return data
 
 
 def logout(request):

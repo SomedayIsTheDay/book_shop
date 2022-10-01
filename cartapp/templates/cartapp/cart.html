@@ -13,7 +13,13 @@
                     {% include 'cartapp/includes/cart_list.html' %}
                     <div class="checkout_btn_inner float-right">
                         <a class="btn_1" href="{% url 'mainapp:index' %}">Continue Shopping</a>
-                        <a class="btn_1 checkout_btn_1" href="{% url 'orders:create' %}">Checkout</a>
+                        <a class="btn_1 checkout_btn_1" href="
+                                {% if user.country and user.city and user.street and user.postcode %}
+                                    {% url 'orders:create' %}
+                                {% else %}
+                                    {% url 'auth:edit' user.pk %}?next=/cart/
+                                {% endif %}">
+                            Checkout</a>
                     </div>
                 </div>
             </div>
