@@ -53,7 +53,7 @@ if DEBUG:
         "template_profiler_panel.panels.template.TemplateProfilerPanel",
     ]
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["somedayistheday.ru", "www.somedayistheday.ru", "127.0.0.1"]
 
 # Application definition
 
@@ -110,21 +110,31 @@ WSGI_APPLICATION = "book_shop.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "book_shop_db",
-        "USER": config("DB_USER"),
-        "PASSWORD": config("DB_PASSWORD"),
-        "HOST": "localhost",
-        "PORT": "5432",
+USE_POSTGRES = config("USE_POSTGRES", cast=bool)
+if USE_POSTGRES:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "book_shop_db",
+            "USER": config("DB_USER"),
+            "PASSWORD": config("DB_PASSWORD"),
+            "HOST": "localhost",
+            "PORT": "5432",
+        }
     }
-}
+    prod_db = dj_database_url.config(conn_max_age=600)
+    DATABASES["default"].update(prod_db)
 
-prod_db = dj_database_url.config(conn_max_age=600)
-
-DATABASES["default"].update(prod_db)
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.mysql",
+            "NAME": config("DB_NAME"),
+            "USER": config("DB_USER"),
+            "PASSWORD": config("DB_PASSWORD"),
+            "HOST": "localhost",
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

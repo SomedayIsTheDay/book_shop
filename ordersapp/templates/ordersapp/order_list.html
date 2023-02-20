@@ -8,56 +8,65 @@
 
     <section class="cart_area section_padding">
         <div class="container">
-            <div class="cart_inner">
-                <div class="table-responsive">
-                    {% load static %}
-                    <table class="table cart_list">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Total cost</th>
-                            <th scope="col">Total quantity</th>
-                            <th scope="col">Created</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for item in object_list %}
+            {% if object_list %}
+                <div class="cart_inner">
+
+                    <div class="table-responsive">
+                        <table class="table cart_list">
+                            <thead>
                             <tr>
-                                <td>
-                                    <h5>{{ item.pk }}</h5>
-                                </td>
-                                <td>
-                                    <h5>{{ item.get_status_display }}</h5>
-                                </td>
-                                {% with summary=item.summary %}
-                                    <td>
-                                        ${{ summary.total_cost }}
-                                    </td>
-                                    <td>
-                                        {{ summary.total_quantity }}
-                                    </td>
-                                {% endwith %}
-                                <td>
-                                    {{ item.created_at }}
-                                </td>
-                                <td>
-                                    <a href="{% url 'orders:detail' item.pk %}" class="btn btn-info">Details</a>
-                                </td>
-                                <td>
-                                    <a href="{% url 'orders:cancel' item.pk %}"
-                                       class="btn btn-danger {% if item.status != "FRM" %} disabled {% endif %}">
-                                        Cancel
-                                    </a>
-                                </td>
+                                <th scope="col">#</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Total cost</th>
+                                <th scope="col">Total quantity</th>
+                                <th scope="col">Created</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
                             </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                            {% for item in object_list %}
+                                <tr>
+                                    <td>
+                                        <h5>{{ item.pk }}</h5>
+                                    </td>
+                                    <td>
+                                        <h5>{{ item.get_status_display }}</h5>
+                                    </td>
+                                    {% with summary=item.summary %}
+                                        <td>
+                                            ${{ summary.total_cost }}
+                                        </td>
+                                        <td>
+                                            {{ summary.total_quantity }}
+                                        </td>
+                                    {% endwith %}
+                                    <td>
+                                        {{ item.created_at }}
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'orders:detail' item.pk %}" class="btn btn-info">Details</a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'orders:cancel' item.pk %}"
+                                           class="btn btn-danger {% if item.status != "FRM" %} disabled {% endif %}">
+                                            Cancel
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-            </div>
+
+            {% else %}
+                <h2 style="text-align: center"><a class="book_link" href="{% url 'cart:cart' %}">You don't have any
+                    placed orders right
+                    now but you can place one
+                    in
+                    your cart!</a></h2>
+            {% endif %}
         </div>
     </section>
 {% endblock %}

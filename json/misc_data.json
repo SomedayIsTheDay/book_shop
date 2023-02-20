@@ -5,26 +5,24 @@
     "google-plus-g",
     "linkedin-in"
   ],
-
   "features": {
     "Credit Card Support": "img/icon/feature_icon_1.svg",
     "Online Order": "img/icon/feature_icon_2.svg",
     "Free Delivery": "img/icon/feature_icon_3.svg",
     "Product with Gift": "img/icon/feature_icon_4.svg"
   },
-
   "reviews": {
     "John Stone": {
-      "image":"img/client.png",
-      "text": "Working in conjunction with humanitarian aid agencies, we have supported programmes to help\nalleviate human suffering."
+      "image": "img/client.png",
+      "text": "I absolutely love this book store! They have a fantastic selection of books and a cozy atmosphere that makes browsing and reading so enjoyable. The staff is always friendly and helpful, and I appreciate their recommendations and insights. This is definitely my go-to book store for all my literary needs!"
     },
     "Tom Holland": {
-      "image":"img/client_1.png",
-      "text": "Working in conjunction with humanitarian aid agencies, we have supported programmes to help\nalleviate human suffering."
+      "image": "img/client_1.png",
+      "text": "What a great experience! The book store is so well-organized and easy to navigate. I was able to find everything I was looking for and even discovered some new titles that I can't wait to read. The staff is knowledgeable and always willing to help, and the overall vibe is warm and welcoming. I highly recommend this book store to anyone looking for a great selection and exceptional customer service."
     },
     "Sam Pierce": {
-      "image":"img/client_2.png",
-      "text": "Working in conjunction with humanitarian aid agencies, we have supported programmes to help\nalleviate human suffering."
+      "image": "img/client_2.png",
+      "text": "This book store is a true gem! The ambiance is so inviting, and the selection of books is extensive and well-curated. The staff is passionate about books and literature, and it shows in the quality of their recommendations and the level of care they give to each customer. I always leave this store feeling inspired and excited about the books I've purchased. If you love books, you have to check out this store!"
     }
   }
 }

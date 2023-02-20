@@ -18,11 +18,6 @@ class BookUserRegistrationForm(UserCreationForm):
             "email",
             "age",
             "avatar",
-            "country",
-            "city",
-            "street",
-            "street_number",
-            "postcode",
         )
 
     def clean_username(self):
